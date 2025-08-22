@@ -1,33 +1,34 @@
 /* ======== ESTILO BASE DO SITE ======== */
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;   /* Fonte padrão usada em toda a página */
-  background-color: #dbd4cb;        /* Cor de fundo cinza claro */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;   /* Fonte padrão usada em toda a página */
+  background-color: #d8d2c9;        /* Cor de fundo cinza claro */
   margin: 0;                        /* Remove a margem padrão do navegador */
   padding: 0;                       /* Remove o espaçamento interno padrão */
 }
 a{
-  text-decoration:underline;
-  color: #0c0b07;
+  text-decoration:underline; /*Adiciona linha em baixo do link*/
+  color: #202020; /*Muda a cor do link*/
 }
 a:hover{
-  text-decoration: none;
-  color: #6b533c;
+  text-decoration: none; /* Retira a linha em baixo do link quando tocado */
+  color: #636363; /* Muda a cor do link quando tocado */
+  transition: 0.3s;
 }
 
 /* ======== CONTAINER PRINCIPAL ======== */
 .container {
   max-width: 900px;                 /* Largura máxima do currículo = 900px */
   margin: 40px auto;                /* 40px em cima/baixo + auto nas laterais -> centraliza no meio */
-  background: #ccc1b3;                  /* Fundo vermelho dentro do cartão */
-  padding: 30px;                    /* Espaço interno para afastar o texto da borda */
+  background: #f5f5f5;                  /* Fundo vermelho dentro do cartão */
+  padding: 25px 30px 30px 30px;                    /* Espaço interno para afastar o texto da borda */
   box-shadow: 0 4px 10px rgba(190, 129, 129, 0.1); /* Sombra leve embaixo do container */
   border-radius: 10px;              /* Bordas arredondadas */
 }
 
 /* ======== CABEÇALHO (foto + nome + contatos) ======== */
 .header {
-  text-align: center;               /* Centraliza todo o conteúdo dentro do cabeçalho */
-  margin-bottom: 20px;              /* Espaço abaixo do cabeçalho */
+  text-align: right;               /* Centraliza todo o conteúdo dentro do cabeçalho */
+  margin-bottom: 30px;              /* Espaço abaixo do cabeçalho */
 }
 
 /* Estilo da foto do perfil */
@@ -36,26 +37,26 @@ a:hover{
   height: 150px;                    /* Altura da foto */
   object-fit: cover;                /* Mantém a proporção da foto sem distorcer */
   border-radius: 50%;               /* Transforma a foto em um círculo */
-  border: 3px solid #0c0b07;        /* Borda azul ao redor da foto */
+  border: 3px solid #202020;        /* Borda azul ao redor da foto */
 }
-/*#0c0b07*/
-/*#6b533c*/
 /* Nome principal (H1) */
 .header h1 {
-  margin: 15px 0 5px;               /* Espaço em cima (15px), embaixo (5px) */
-  color: #6b533c;                   /* Cor azul do título */
+  margin: 25px 0 px;               /* Espaço em cima (15px), embaixo (5px) */
+  color: #202020;                   /* Cor azul do título */
+  text-align: right;                  /* Alinha o títilo na direita */
 }
 
 /* Informações do cabeçalho (idade, cidade, contato) */
 .header p {
-  margin: 2px 0;                    /* Espaçamento pequeno entre as linhas */
-  color: #0c0b07;                      /* Cor cinza escuro para o texto */
+  margin: 0px 9px;                    /* Espaçamento pequeno entre as linhas */
+  color: #202020;                      /* Cor cinza escuro para o texto */
+  text-align: right;                      /*Aliha o parágrafo na direita*/
 }
 
 /* ======== TÍTULOS DE SEÇÃO (H2) ======== */
 h2 {
-  color: #6b533c;                   /* Cor azul do título */
-  border-bottom: 2px solid #0c0b07; /* Linha azul logo abaixo do título */
+  color: #202020;                   /* Cor azul do título */
+  border-bottom: 2px solid #716f69; /* Linha azul logo abaixo do título */
   padding-bottom: 5px;              /* Espaço entre o texto e a linha */
   margin-top: 30px;                /* Espaço acima de cada seção */
 }
@@ -76,6 +77,37 @@ ul {
 /* Criação de marcadores personalizados */
 ul li::before {
   content: "• ";                    /* Insere uma bolinha manualmente antes de cada item */
-  color: #0c0b07;                   /* Define a cor da bolinha (azul) */
+  color: #202020;                   /* Define a cor da bolinha (azul) */
   font-weight: bold;                /* Deixa a bolinha mais grossa/forte */
+}
+
+/* Botão de imprimir */
+#bnt-print {
+  background-color: #202020; /* Cor do fundo do botão */
+  color: white; /* Cor do texto do fundo do botão */
+  border: none; /* Tira a borda do botão */
+  padding:  10px 20px;    /* Espaço de dentro do botão */
+  cursor: pointer;  /* Muda o cursor ao passar por cima */
+  font-size: 16px;    /* Muda o tamanho da fonte do botão */
+  border-radius: 2px;   /* Arredonda a borda do botão */
+}
+
+#bnt-print:hover{
+  background-color: #636363;    /* Ao  passar o mouse por cima ele muda o fundo */
+  color: #d8d2c9;       /* Ao passar o mouse por cima ele muda a cor do texto */
+  padding: 10px 22px;   /* Aumentando tamanho do botão */
+  transition: 0.2s;     /* Transição para a animaão */
+}
+
+.button{
+  display: flex;      /* Usado para mover o botão */
+  justify-content: right;     /* Usado para moveer para dirieta */
+}
+
+/* muda o componete de acordo com a ação */
+@media print{
+  #bnt-print{
+    display: none;
+    visibility: hidden;
+  }
 }
